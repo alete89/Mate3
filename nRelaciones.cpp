@@ -4,7 +4,7 @@
 #include <string.h>
 #include <ctype.h>
 
-#define maxR 16 //sizeof(A) * sizeof(B), pero C no permite variables para definir tamaño de arrays
+#define maxR 16 //sizeof(A) * sizeof(B), pero C no permite variables para definir tamaÃ±o de arrays
 
 char A[] = {'1', '2', '5', '8'};
 char B[] = {'A', 'B', 'R', 'Z'};
@@ -56,7 +56,7 @@ void mostrarR(){
 	}
 }
 void reflexividad(){
-	printf("la relación es reflexiva si cada elemento del dominio está en relación con si mismo\n");
+	printf("la relaciÃ³n es reflexiva si cada elemento del dominio estÃ¡ en relaciÃ³n con si mismo\n");
 	int i = 0;
 	int eureka = 0;
 	while (rel[i][0] != 0){
@@ -69,15 +69,15 @@ void reflexividad(){
 		i++;
 	}
 	if (eureka == i){
-		printf("la relación definida es reflexiva\n");
+		printf("la relaciÃ³n definida es reflexiva\n");
 	}
-	else printf("la relación definida no es reflexiva\n");
+	else printf("la relaciÃ³n definida no es reflexiva\n");
 }
 
 
 void antisimetria(){
-	printf("la relación es antisimétrica si para un par (a,b) existe (b, a) y esto implica a=b\n");
-	printf("si existe (a, b) pero no existe (b, a), es antisimétrica por falsedad del antecedente\n");
+	printf("la relaciÃ³n es antisimÃ©trica si para un par (a,b) existe (b, a) y esto implica a=b\n");
+	printf("si existe (a, b) pero no existe (b, a), es antisimÃ©trica por falsedad del antecedente\n");
 	int i = 0;
 	int noes = 0;
 	while (rel[i][0] != 0){
@@ -91,28 +91,32 @@ void antisimetria(){
 		i++;
 	}
 	if (noes == 0){
-		printf("la relación definida es antisimétrica\n");
+		printf("la relaciÃ³n definida es antisimÃ©trica\n");
 	}
-	else printf("la relación definida no es antisimétrica\n");
+	else printf("la relaciÃ³n definida no es antisimÃ©trica\n");
 }
 
 void transitividad(){
-	printf("la relación es transitiva cuando existe (a,b), (b,c) y (a,c)\n");
+	printf("la relaciÃ³n es transitiva cuando existe (a,b), (b,c) y (a,c)\n");
 	printf("c, bien puede ser a => (a,b)(b,a)(a,a)\n");
 	int i = 0;
 	int eureka = 0;
 	while (rel[i][0] != 0){
 		for (int j= 0; j<16; j++){
-			if (rel[j][0] == rel[i][1] && rel[j][1] == rel[i][0]){
-				eureka++;
+			if (rel[i][1] == rel[j][0]){
+				for (int k=0; k<16; k++){
+					if (rel[k][0] == rel[i][0] && rel[j][1] == rel[k][1]){
+						eureka++;
+					}
+				}
 			}
 		}
-	i++;
+		i++;
 	}
-	if (eureka == 0){
-		printf("la relación definida es antisimétrica\n");
+	if (eureka == ?){
+		printf("la relaciÃ³n definida es transitiva\n");
 	}
-	else printf("la relación definida no es antisimétrica\n");
+	else printf("la relaciÃ³n definida no es transitiva\n");
 }
 
 
