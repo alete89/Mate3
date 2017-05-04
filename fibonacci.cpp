@@ -17,12 +17,11 @@ int fibonacci(int n)
 int main(){
 	int valorIngresado;
 	
-	printf("Ingrese un valor m·ximo:\n");
+	printf("Ingrese un valor m√°ximo:\n");
 	fflush(stdin);
 	scanf("%d",&valorIngresado);
-	printf("0, 1");
-	for(int i=2; i < valorIngresado; i++){
-		printf(", %d",fibonacci(i));
+	for(int i=0; i < valorIngresado; i++){
+		printf("%d ",fibonacci(i));
 	}   
 	getch();
 }
