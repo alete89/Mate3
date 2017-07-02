@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#minimax
 void ingresar(int vec[], int i){
         fflush(stdin);
        scanf("%d",&vec[i]);
